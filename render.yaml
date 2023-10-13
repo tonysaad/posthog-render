@@ -39,7 +39,7 @@ services:
     value: render
 
 - type: pserv
-  plan: free
+  plan: starter
   region: frankfurt
   name: posthog-redis
   env: docker
