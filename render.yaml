@@ -4,6 +4,7 @@ databases:
   user: posthog
   plan: free
   region: frankfurt
+  postgresMajorVersion: 13
 
 services:
 - type: web
