@@ -3,11 +3,13 @@ databases:
   databaseName: posthog
   user: posthog
   plan: standard # PostHog can quickly use up hundreds of MBs of disk space, depending on the volume of analytics
+  region: frankfurt
 
 services:
 - type: web
   name: posthog
   env: docker
+  region: frankfurt
   dockerfilePath: ./server/Dockerfile
   dockerContext: ./server
   autoDeploy: false
@@ -36,6 +38,7 @@ services:
     value: render
 
 - type: pserv
+  region: frankfurt
   name: posthog-redis
   env: docker
   autoDeploy: false
@@ -46,6 +49,7 @@ services:
     sizeGB: 10
 
 - type: worker
+  region: frankfurt
   name: posthog-worker
   env: docker
   dockerfilePath: ./worker/Dockerfile
@@ -75,6 +79,7 @@ services:
     value: render
 
 - type: worker
+  region: frankfurt
   name: posthog-plugin-server
   env: docker
   dockerfilePath: ./plugin-server/Dockerfile
